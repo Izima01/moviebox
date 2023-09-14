@@ -10,11 +10,11 @@ const MovieInfo = () => {
             <div className="flex gap-5 flex-col lg:flex-row">
                 <h3 className="flex items-center justify-between md:gap-2 text-[#404040] text-xl md:text-lg lg:text-xl">
                     Top Gun: Maverick
-                    <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
+                    <div className="bg-[#404040] w-1.5 h-1.5 sm:mt-1 rounded-full" />
                     2022
-                    <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
+                    <div className="bg-[#404040] w-1.5 h-1.5 sm:mt-1 rounded-full" />
                     PG-13
-                    <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
+                    <div className="bg-[#404040] w-1.5 h-1.5 sm:mt-1 rounded-full" />
                     2h 10m
                 </h3>
 

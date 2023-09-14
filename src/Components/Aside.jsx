@@ -16,7 +16,7 @@ const links = [
 
 const Aside = () => {
   return (
-    <aside className="border border-[rgba(0,0,0,0.3)] rounded-e-3xl py-6 w-48 lg:w-[14.5rem] flex flex-col justify-between items-center bg-white h-[90vh]">
+    <aside className="border border-[rgba(0,0,0,0.3)] rounded-e-3xl py-6 w-48 lg:w-[14.5rem] flex flex-col justify-between items-center bg-white h-screen">
         <img src={logo} alt="logo" className='w-3/4 h-10' />
 
         <nav className='flex flex-col w-full'>
