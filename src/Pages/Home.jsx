@@ -14,11 +14,11 @@ const Home = () => {
   }, [searchInput]);
 
   return (
-    <div>
+    <>
       <Hero searchInput={searchInput} setSearchInput={setSearchInput} />
       <MovieCollection data={data} isLoading={isLoading} filteredData={filteredData} />
       <Footer />
-    </div>
+    </>
   )
 }
 

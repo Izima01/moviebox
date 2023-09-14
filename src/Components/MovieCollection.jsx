@@ -18,11 +18,10 @@ const MovieCollection = ({ data, isLoading, filteredData }) => {
       </div>
 
       {
-        isLoading ? <Loader /> : (
-          <div className='grid sm:grid-cols-3 lg:grid-cols-4 w-full gap-6 md:gap-10 mb-10 collection'>
-            {(filteredData ? filteredData : data)?.map((data) => <MovieCard key={data.id} details={data} />)}
-          </div>
-        )
+        isLoading ? <Loader />
+        : <div className='grid sm:grid-cols-3 lg:grid-cols-4 w-full gap-6 md:gap-10 mb-10 collection'>
+            {(filteredData.length ==0 ? data : filteredData).map((dat) => <MovieCard key={dat.id} details={dat} />)}
+        </div>
       }
     </section>
   )

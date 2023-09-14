@@ -21,6 +21,7 @@ const useMovieFetcher = () => {
                 const response = await fetch(url2, options);
                 const result = await response.json();
                 setdata(result.results);
+                console.log(result.results);
             } catch (err) {
                 seterror(err);
             } finally {
