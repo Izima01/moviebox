@@ -1,0 +1,46 @@
+main.hero {
+    background: url('./assets/Poster.png');
+    background-size: cover;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(from -90deg, #3490dc, #f68d3d, #d53f8c, #9333ea, #3490dc);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    main.hero {
+        background-size: 140vw 100vh;
+    }
+}
+
+@media screen and (min-width: 480px ) and (max-width: 640px) {
+    div.collection {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+* {
+    color: white;
+}
