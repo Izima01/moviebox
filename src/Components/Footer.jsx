@@ -5,7 +5,7 @@ import twitter from '../assets/twitter.svg';
 
 const Footer = () => {
   return (
-    <footer className="w-[86%] md:w-3/5 lg:w-1/2 mx-auto my-20">
+    <footer className="w-[90%] md:w-3/5 lg:w-1/2 mx-auto my-20">
       <ul className="flex gap-12 mx-auto justify-center">
         <li className='hover:scale-110 duration-500 transition'>
           <a href="https://facebook.com">

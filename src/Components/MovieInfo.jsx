@@ -5,8 +5,8 @@ import best from '../assets/bestshow.png'
 
 const MovieInfo = () => {
   return (
-    <div className="text-black px-2">
-        <div className="top flex flex-col gap-2 lg:gap-0 lg:flex-row justify-between w-full">
+    <div className="text-black sm:px-2">
+        <div className="top flex flex-col gap-1.5 lg:gap-0 lg:flex-row justify-between w-full">
             <div className="flex gap-5 flex-col lg:flex-row">
                 <h3 className="flex items-center justify-between md:gap-2 text-[#404040] text-xl md:text-lg lg:text-xl">
                     Top Gun: Maverick

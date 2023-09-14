@@ -24,7 +24,7 @@ const Details = () => {
         </div>
         <main className="w-full lg:m-7 m-4">
           <div className="rounded-[1.25rem] relative mb-6">
-            <img src={topgun} className="w-full" alt="" />
+            <img src={topgun} className="w-full h-48 sm:h-auto" alt="" />
             <button className="absolute top-[calc(50%-10px)] left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 md:p-5 rounded-full bg-[#ffffff59]">
               <img src={Play} className="md:w-8 w-4" alt="" />
             </button>
