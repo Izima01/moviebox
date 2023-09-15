@@ -9,7 +9,7 @@ import Playing from './Playing';
 
 const links = [
     { to: '/', name: 'Home', logo: home },
-    { to: '/details/', name: 'Movies', logo: Movie },
+    { to: '/details', name: 'Movies', logo: Movie },
     { to: '/series', name: 'TV Series', logo: TV },
     { to: '/upcoming', name: 'Upcoming', logo: Calendar },
 ];

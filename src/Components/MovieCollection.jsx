@@ -12,7 +12,7 @@ const MovieCollection = ({ data, isLoading, filteredData }) => {
         <h3 className="text-black text-3xl font-semibold">Featured Movie</h3>
 
         <button className="text-[#BE123C] flex gap-1 items-center">
-          See more
+          <span className='text-[#be123c]'>See more</span>
           <img src={right} alt="" />
         </button>
       </div>

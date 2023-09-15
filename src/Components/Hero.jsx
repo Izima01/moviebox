@@ -37,7 +37,7 @@ const Hero = ({ searchInput, setSearchInput }) => {
         </button>
       </section>
 
-      <div className={`sm:hidden fixed left-0 top-0 bottom-0 transition duration-500 ease-in-out ${toggleOn ? 'translate-x-0' : '-translate-x-60'}`}>
+      <div className={`fixed left-0 top-0 bottom-0 transition duration-500 ease-in-out ${toggleOn ? 'translate-x-0' : '-translate-x-60'}`}>
         <Aside />
       </div>
 

@@ -5,7 +5,9 @@ const useGetDetailsFetcher = (movieId) => {
     const [data, setdata] = useState([]);
     const [error, seterror] = useState('');
 
-    const url = `https://api.themoviedb.org/3/movie/${movieId}`;
+    const url = `https://api.themoviedb.org/3/movie/${movieId}?include_video=true`;
+    // const url2 = 'https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&sort_by=popularity.desc'
+
 
     const options = {
         method: 'GET',
