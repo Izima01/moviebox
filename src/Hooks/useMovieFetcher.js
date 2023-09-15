@@ -1,11 +1,12 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react'
 
 const useMovieFetcher = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setdata] = useState([]);
-    const [error, seterror] = useState('');
-    // const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
-    const url2 = 'https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&sort_by=popularity.desc'
+    const [data, setData] = useState([]);
+    const [error, setError] = useState('');
+
+    const url2 = 'https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&sort_by=popularity.desc';
     const options = {
         method: 'GET',
         headers: {
@@ -18,11 +19,10 @@ const useMovieFetcher = () => {
         async function fetchData() {
             try {
                 setIsLoading(true);
-                const response = await fetch(url2, options);
-                const result = await response.json();
-                setdata(result.results);
+                const response = await axios.get(url2, options);
+                setData(response.data.results);
             } catch (err) {
-                seterror(err);
+                setError(err.response.statusText);
             } finally {
                 setTimeout(() => {
                     setIsLoading(false);

@@ -14,13 +14,19 @@ const MovieInfo = ({ data }) => {
         <div className="top flex flex-col gap-1.5 lg:gap-0 lg:flex-row justify-between w-full">
             <div className="flex gap-5 flex-col lg:flex-row">
                 <h3 className="flex flex-wrap items-center gap-3 text-[#404040] text-xl md:text-lg lg:text-xl">
-                    {original_title}
+                    <span data-testid="movie-title" className='text-[#404040]'>
+                        {original_title}
+                    </span>
                     <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
-                    {date.getFullYear()}
+                    <span className='text-[#404040]' data-testid="movie-release-date">
+                        {date.toUTCString()}
+                    </span>
                     <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
                     {adult ? "R-18" : "PG-13"}
                     <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
-                    {Math.floor(runtime/60)}h {runtime%60}m 
+                    <span className='text-[#404040]' data-testid="movie-runtime">
+                        {runtime}m 
+                    </span>
                 </h3>
 
                 <div className="flex gap-3">
@@ -40,7 +46,7 @@ const MovieInfo = ({ data }) => {
 
         <section className="bottom flex flex-col sm:flex-row w-full justify-between mt-7 gap-6">
             <section className='w-full sm:w-8/12 md:w-7/12 lg:w-3/4 '>
-                <p className='text-[#333] text-lg mb-7'>{overview}</p>
+                <p className='text-[#333] text-lg mb-7' data-testid="movie-overview">{overview}</p>
                 
                 <p className='text-lg text-[#333] mb-5'>
                     Directors:

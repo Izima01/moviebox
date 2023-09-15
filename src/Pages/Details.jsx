@@ -6,6 +6,8 @@ import { useState } from "react";
 import Menu from '../assets/Menu.svg';
 import { Link, useParams } from "react-router-dom";
 import useGetDetailsFetcher from "../Hooks/useGetDetails";
+import Loader from "../Components/Loader";
+import Error from "../Components/Error";
 // import { singleMovie } from "../data";
 
 const Details = () => {
@@ -32,13 +34,23 @@ const Details = () => {
         </div>
         <main className="w-full lg:m-7 m-4">
           <div className="rounded-[1.25rem] relative mb-6">
-            <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} className="w-full h-[13.5rem] sm:h-auto rounded-3xl" alt="" />
-            <Link target="_blank" to={homepage} className="absolute top-[calc(50%-10px)] left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 md:p-5 rounded-full bg-[#ffffff59]">
-              <img src={Play} className="md:w-8 w-4" alt="" />
-            </Link>
-            <p className="absolute top-[calc(50%+38px)] left-1/2 -translate-x-1/2 -translate-y-1/2 md:text-lg">Watch Trailer</p>
+            {
+              isLoading ? <Loader /> :
+              error ? <Error />
+              : (            
+                <>
+                  <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} className="w-full h-[13.5rem] sm:h-auto rounded-3xl" alt="" />
+                  <Link target="_blank" to={homepage} className="absolute top-[calc(50%-10px)] left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 md:p-5 rounded-full bg-[#ffffff59]">
+                    <img src={Play} className="md:w-8 w-4" alt="" />
+                  </Link>
+                  <p className="absolute top-[calc(50%+38px)] left-1/2 -translate-x-1/2 -translate-y-1/2 md:text-lg">Watch Trailer</p>)
+                </>
+              )
+            }
           </div>
-          <MovieInfo data={data} />
+          {
+            isLoading ? <></> : <MovieInfo data={data} />
+          }
         </main>
       </div>
     </>

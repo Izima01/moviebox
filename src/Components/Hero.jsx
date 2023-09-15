@@ -6,12 +6,12 @@ import Play from '../assets/Play.svg';
 import Aside from './Aside';
 import { useState } from 'react';
 
-const Hero = ({ searchInput, setSearchInput }) => {
+const Hero = ({ searchInput, setSearchInput, handleSearch }) => {
   const [toggleOn, setToggleOn] = useState(false);
 
   return (
     <main className='h-screen hero'>
-      <Navbar setToggleOn={setToggleOn} toggleOn={toggleOn} searchInput={searchInput} setSearchInput={setSearchInput} />
+      <Navbar setToggleOn={setToggleOn} toggleOn={toggleOn} searchInput={searchInput} setSearchInput={setSearchInput} handleSearch={handleSearch} />
       <section className='mx-[5%] md:mx-[7%] mt-14'>
         <h2 className="text-5xl font-bold leading-snug">John Wick 3 : <br /> Parebellum</h2>
 

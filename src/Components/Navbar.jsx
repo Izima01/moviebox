@@ -3,7 +3,7 @@ import Search from '../assets/Search.svg';
 import Menu from '../assets/Menu.svg';
 
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ setToggleOn, toggleOn, searchInput, setSearchInput }) => {
+const Navbar = ({ setToggleOn, toggleOn, searchInput, setSearchInput, handleSearch }) => {
 
   return (
     <header className="w-[90%] md:w-[86%] mx-auto py-4 flex justify-between items-center">
@@ -11,7 +11,9 @@ const Navbar = ({ setToggleOn, toggleOn, searchInput, setSearchInput }) => {
 
       <div className='relative w-fit'>
         <input type="search" value={searchInput} onChange={(e) => setSearchInput(e.target.value.toLowerCase())} className='w-[9.5rem] focus:w-60 sm:focus:w-[360px] sm:w-[360px] md:focus:w-[420px] md:w-[420px] pl-4 pr-8 sm:px-2.5 py-1 transition-all duration-700 ease-in-out bg-transparent text-white border-white border rounded-lg placeholder:text-white outline-none' placeholder='What do you want to watch?' name="" id="" />
-        <img src={Search} alt="" className='absolute right-3 top-2' />
+        <button onClick={handleSearch}>
+          <img src={Search} alt="" className='absolute right-3 top-2' />
+        </button>
       </div>
       
       {/* <div className='flex items-center font-bold gap-6'> */}
