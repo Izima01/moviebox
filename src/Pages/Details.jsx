@@ -12,14 +12,14 @@ const Details = () => {
   const [toggleOn, setToggleOn] = useState(false);
   const { productId } = useParams();
 
-  const { isLoading, data, error } = useGetDetailsFetcher(productId);
+  const { isLoading, data, error } = useGetDetailsFetcher(productId.slice(1));
 
   const { backdrop_path, homepage } = data;
   
   return (
     <>
       <div className="flex">
-        <div className={`sm:hidden fixed left-0 top-0 bottom-0 transition duration-500 ease-in-out z-10 ${toggleOn ? 'translate-x-0' : '-translate-x-60'}`}>
+        <div className={`block md:hidden fixed left-0 top-0 bottom-0 transition duration-500 ease-in-out z-10 ${toggleOn ? 'translate-x-0' : '-translate-x-60'}`}>
           <Aside />
         </div>
 
