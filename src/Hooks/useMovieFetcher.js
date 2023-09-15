@@ -6,7 +6,7 @@ const useMovieFetcher = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
 
-    const url2 = 'https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&sort_by=popularity.desc';
+    const url2 = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
     const options = {
         method: 'GET',
         headers: {
@@ -20,6 +20,7 @@ const useMovieFetcher = () => {
             try {
                 setIsLoading(true);
                 const response = await axios.get(url2, options);
+                console.log(response);
                 setData(response.data.results);
             } catch (err) {
                 setError(err.response.statusText);
