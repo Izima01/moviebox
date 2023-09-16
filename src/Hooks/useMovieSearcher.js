@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 
-const useMovieFetcher = () => {
+const useMovieSearcher = (query) => {
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
 
-    const url2 = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
+    const url = `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`;
     const options = {
         method: 'GET',
         headers: {
@@ -19,10 +19,11 @@ const useMovieFetcher = () => {
         async function fetchData() {
             try {
                 setIsLoading(true);
-                const response = await axios.get(url2, options);
+                const response = await axios.get(url, options);
+                console.log(response.data.results);
                 setData(response.data.results);
             } catch (err) {
-                setError(err.response.statusText);
+                setError(err);
             } finally {
                 setTimeout(() => {
                     setIsLoading(false);
@@ -31,9 +32,9 @@ const useMovieFetcher = () => {
         }
         fetchData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [query]);
 
     return { isLoading, data, error }
 }
 
-export default useMovieFetcher
+export default useMovieSearcher

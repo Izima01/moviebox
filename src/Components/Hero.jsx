@@ -6,14 +6,14 @@ import Play from '../assets/Play.svg';
 import Aside from './Aside';
 import { useState } from 'react';
 
-const Hero = ({ searchInput, setSearchInput, handleSearch }) => {
+const Hero = ({ handleSearch }) => {
   const [toggleOn, setToggleOn] = useState(false);
 
   return (
-    <main className='h-screen hero'>
-      <Navbar setToggleOn={setToggleOn} toggleOn={toggleOn} searchInput={searchInput} setSearchInput={setSearchInput} handleSearch={handleSearch} />
-      <section className='mx-[5%] md:mx-[7%] mt-14'>
-        <h2 className="text-5xl font-bold leading-snug">John Wick 3 : <br /> Parebellum</h2>
+    <main className='h-[85vh] hero'>
+      <Navbar setToggleOn={setToggleOn} toggleOn={toggleOn} handleSearch={handleSearch} />
+      <section className='mx-[5%] md:mx-[7%] mt-9 md:mt-12'>
+        <h2 className="text-4xl sm:text-5xl font-bold leading-snug">John Wick 3 : <br /> Parebellum</h2>
 
         <ul className="list-none flex items-center gap-8 my-4">
           <li className='flex gap-2.5 items-center text-sm'>
@@ -27,7 +27,7 @@ const Hero = ({ searchInput, setSearchInput, handleSearch }) => {
           </li>
         </ul>
 
-        <p className="mb-4 w-10/12 md:w-7/12 lg:w-1/2 font-medium">
+        <p className="mb-4 w-11/12 md:w-7/12 lg:w-1/2 font-medium">
           John Wick is on the run after killing a member of the international assassins guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.
         </p>
 

@@ -5,7 +5,7 @@ import MovieCard from './MovieCard';
 import Loader from './Loader';
 import Error from './Error';
 
-const MovieCollection = ({ data, isLoading, filteredData, searchLoading, error }) => {
+const MovieCollection = ({ data, isLoading, filteredData, searchLoading, error, searchError }) => {
 
   return (
     <section className="w-[90%] md:w-[86%] mx-auto pt-10">
@@ -21,7 +21,7 @@ const MovieCollection = ({ data, isLoading, filteredData, searchLoading, error }
       {
         isLoading ? <Loader />
         : searchLoading ? <Loader />
-        : error ? <Error info={error} />
+        : (error || searchError) ? <Error info={error} />
         : <div className='grid sm:grid-cols-3 lg:grid-cols-4 w-full gap-6 md:gap-10 mb-10 collection'>
             {(filteredData.length == 0 ? data.slice(0,10) : filteredData).map((dat) => <MovieCard key={dat.id} details={dat} />)}
         </div>
