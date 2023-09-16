@@ -14,7 +14,7 @@ const MovieCard = ({ details }) => {
   return (
     <Link className="text-black flex flex-col gap-2 sm:gap-3" to={`/movies/${id}`} data-testid='movie-card'>
         <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} loading='lazy' className='w-full h-96 sm:h-auto' alt="movie poster" data-testid="movie-poster" />
-        <p className='text-[#9CA3AF] font-semibold text-sm' data-test-id='movie-release-date'>{date.toDateString()}</p>
+        <p className='text-[#9CA3AF] font-semibold text-sm' data-testid='movie-release-date'>{date.toDateString()}</p>
         <h3 className='text-[#111827] text-lg font-bold' data-testid='movie-title'>{original_title}</h3>
 
         <ul className="list-none flex items-center justify-between">
