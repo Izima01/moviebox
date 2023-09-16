@@ -12,9 +12,9 @@ import Error from "../Components/Error";
 
 const Details = () => {
   const [toggleOn, setToggleOn] = useState(false);
-  const { productId } = useParams();
+  const { id } = useParams();
 
-  const { isLoading, data, error } = useGetDetailsFetcher(productId.slice(1));
+  const { isLoading, data, error } = useGetDetailsFetcher(id);
 
   const { backdrop_path, homepage } = data;
   

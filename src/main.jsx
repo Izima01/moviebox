@@ -8,7 +8,7 @@ import Details from './Pages/Details.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
-  { path: '/details/:productId', element: <Details /> }
+  { path: '/movies/:id', element: <Details /> }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

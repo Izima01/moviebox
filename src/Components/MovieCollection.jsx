@@ -23,7 +23,7 @@ const MovieCollection = ({ data, isLoading, filteredData, searchLoading, error }
         : searchLoading ? <Loader />
         : error ? <Error info={error} />
         : <div className='grid sm:grid-cols-3 lg:grid-cols-4 w-full gap-6 md:gap-10 mb-10 collection'>
-            {(filteredData.length == 0 ? data : filteredData).map((dat) => <MovieCard key={dat.id} details={dat} />)}
+            {(filteredData.length == 0 ? data.slice(0,10) : filteredData).map((dat) => <MovieCard key={dat.id} details={dat} />)}
         </div>
       }
     </section>
