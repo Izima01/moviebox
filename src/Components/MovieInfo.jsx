@@ -19,7 +19,7 @@ const MovieInfo = ({ data }) => {
                     </span>
                     <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
                     <span className='text-[#404040]' data-testid="movie-release-date">
-                        {date.toUTCString()}
+                        {date.toDateString()}
                     </span>
                     <div className="bg-[#404040] w-1.5 h-1.5 mt-1 rounded-full" />
                     {adult ? "R-18" : "PG-13"}
